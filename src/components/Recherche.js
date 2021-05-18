@@ -27,10 +27,14 @@ class Recherche extends React.Component{
         ];
         return(
             <div className="recherche">
-                <Select placeholder= 'Choisissez un département' options= {optionsDpt} onChange ={this.onDptChange}/>
-                <Select placeholder= 'Choisissez une administration' options= {optionsType} onChange ={this.onTypeChange}/>
-                <Button primary>Lancer la recherche</Button>
-                <Button secondary>Effacer la recherche</Button>
+                <div className="select__style">
+                    <Select placeholder= 'Choisissez un département' options= {optionsDpt} onChange ={this.onDptChange}/>
+                    <Select placeholder= 'Choisissez une administration' options= {optionsType} onChange ={this.onTypeChange}/>
+                </div>
+                <div className="btn__style">
+                    <Button primary>Lancer la recherche</Button>
+                    <Button secondary>Effacer la recherche</Button>
+                </div>
             </div>
         )
     }

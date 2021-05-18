@@ -1,0 +1,16 @@
+.recherche{
+    margin:15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button__style{
+    width: 100%;
+    flex-direction: row;
+}
+
+.select__style{
+    margin: 15px;
+}
