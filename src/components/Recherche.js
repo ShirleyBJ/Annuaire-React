@@ -5,7 +5,12 @@ import 'semantic-ui-css/semantic.min.css';
 class Recherche extends React.Component{
     constructor(props){
         super(props);
+        this.state = {
+            dpt : "",
+            type : ""
+        }
     }render(){
+        console.log(this.state);
         const optionsDpt = [
             {key: '60', value: '60', text: 'Oise'},
             {key: '02', value: '02', text: 'Aisne'},
@@ -22,12 +27,22 @@ class Recherche extends React.Component{
         ];
         return(
             <div className="recherche">
-                <Select placeholder= 'Choisissez un département' options= {optionsDpt} />
-                <Select placeholder= 'Choisissez une administration' options= {optionsType} />
+                <Select placeholder= 'Choisissez un département' options= {optionsDpt} onChange ={this.onDptChange}/>
+                <Select placeholder= 'Choisissez une administration' options= {optionsType} onChange ={this.onTypeChange}/>
                 <Button primary>Lancer la recherche</Button>
                 <Button secondary>Effacer la recherche</Button>
             </div>
         )
+    }
+
+    onDptChange = (e,data) => {
+        console.log(data)
+        this.setState({dpt : data.value});
+    }
+
+    onTypeChange = (e,data) => {
+        console.log(data)
+        this.setState({type : data.value});
     }
 }
 
