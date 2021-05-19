@@ -29,8 +29,15 @@ class App extends React.Component{
     }
   } 
   
-  onSearch = (dpt,type) =>{
-    console.log(dpt,type);
+  onSearch = async (dpt,type) =>{
+    //console.log(dpt,type);
+    try{
+      var ip = await fetch ("https://etablissements-publics.api.gouv.fr/v3/departements/" + dpt +"/"+ type);
+      var data = await ip.json();
+      console.log(data);
+    } catch(e){
+      console.log(e);
+    }
   }
   
   render (){

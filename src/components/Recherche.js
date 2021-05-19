@@ -34,7 +34,7 @@ class Recherche extends React.Component{
             {key: 'cio', value: 'cio', text: 'Centre d’information et d’orientation (CIO)'},
             {key: 'cr', value: 'cr', text: 'Conseil régional'},
             {key: 'cpam', value: 'cpam', text: 'Caisse primaire d’assurance maladie (CPAM)'},
-            {key: 'mairie_com', value: 'mairie_com', text: 'Mairie des collectivités d\'outre-mer'},
+            {key: 'caf', value: 'caf', text: 'Caisse d’allocations familiales (CAF)'},
             {key: 'maison_arret', value: 'maison_arret', text: 'Maison d\'arrêt'},
         ];
         return(
@@ -44,7 +44,7 @@ class Recherche extends React.Component{
                     <Select placeholder= 'Choisissez une administration' options= {optionsType} onChange ={this.onTypeChange}/>
                 </div>
                 <div className="btn__style">
-                    <Button primary onClick = {this.props.onsearch(this.state.dpt,this.state.type)}>Lancer la recherche</Button>
+                    <Button primary onClick = {() => this.props.onsearch(this.state.dpt,this.state.type)}>Lancer la recherche</Button>
                     <Button secondary>Effacer la recherche</Button>
                 </div>
             </div>
