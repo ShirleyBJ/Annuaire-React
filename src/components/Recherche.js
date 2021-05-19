@@ -9,7 +9,19 @@ class Recherche extends React.Component{
             dpt : "",
             type : ""
         }
-    }render(){
+    }
+
+    onDptChange = (e,data) => {
+        console.log(data)
+        this.setState({dpt : data.value});
+    }
+
+    onTypeChange = (e,data) => {
+        console.log(data)
+        this.setState({type : data.value});
+    }
+    
+    render(){
         console.log(this.state);
         const optionsDpt = [
             {key: '60', value: '60', text: 'Oise'},
@@ -32,22 +44,13 @@ class Recherche extends React.Component{
                     <Select placeholder= 'Choisissez une administration' options= {optionsType} onChange ={this.onTypeChange}/>
                 </div>
                 <div className="btn__style">
-                    <Button primary>Lancer la recherche</Button>
+                    <Button primary onClick = {this.props.onsearch(this.state.dpt,this.state.type)}>Lancer la recherche</Button>
                     <Button secondary>Effacer la recherche</Button>
                 </div>
             </div>
         )
     }
 
-    onDptChange = (e,data) => {
-        console.log(data)
-        this.setState({dpt : data.value});
-    }
-
-    onTypeChange = (e,data) => {
-        console.log(data)
-        this.setState({type : data.value});
-    }
 }
 
 export default Recherche;
