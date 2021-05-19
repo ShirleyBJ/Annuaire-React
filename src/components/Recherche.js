@@ -28,7 +28,6 @@ class Recherche extends React.Component{
             {key: '02', value: '02', text: 'Aisne'},
             {key: '80', value: '80', text: 'Somme'},
             {key: '93', value: '93', text: 'Seine-St-Denis'},
-            {key: '97', value: '97', text: 'Guadeloupe'}
         ];
         const optionsType = [
             {key: 'cio', value: 'cio', text: 'Centre d’information et d’orientation (CIO)'},
@@ -45,7 +44,7 @@ class Recherche extends React.Component{
                 </div>
                 <div className="btn__style">
                     <Button primary onClick = {() => this.props.onsearch(this.state.dpt,this.state.type)}>Lancer la recherche</Button>
-                    <Button secondary>Effacer la recherche</Button>
+                    <Button secondary onClick = {this.props.onEmpty}>Effacer la recherche</Button>
                 </div>
             </div>
         )
